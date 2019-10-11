@@ -1,0 +1,28 @@
+@import "bootstrap-init";
+
+@import "../../vendors/bootstrap/scss/reboot";
+@import "../../vendors/bootstrap/scss/scss/vendor/rfs";
+
+
+// Core CSS
+@import "../../vendors/bootstrap/scss/type";
+@import "../../vendors/bootstrap/scss/grid";
+
+
+// composant bootstrap
+@import "../../vendors/bootstrap/scss/media";
+@import "../../vendors/bootstrap/scss/mixins";
+@import "../../vendors/bootstrap/scss/forms";
+@import "../../vendors/bootstrap/scss/card";
+@import "../../vendors/bootstrap/scss/transitions";
+@import "../../vendors/bootstrap/scss/images";
+
+@import "../../vendors/bootstrap/scss/alert";
+@import "../../vendors/bootstrap/scss/tables";
+@import "../../vendors/bootstrap/scss/buttons";
+@import "../../vendors/bootstrap/scss/dropdown";
+
+
+//@import "../bootstrap/pagination";
+// Utility classes
+@import "../../vendors/bootstrap/scss/utilities";

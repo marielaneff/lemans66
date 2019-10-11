@@ -1,0 +1,332 @@
+// =============================================================================
+// Font Face
+// =============================================================================
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff ttf svg) {
+    $src: null;
+
+    $extmods: ( eot: "?",
+    svg: "#" + str-replace($name, " ", "_"));
+
+    $formats: ( otf: "opentype",
+    ttf: "truetype");
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}
+
+
+// =============================================================================
+// box shadow
+// =============================================================================
+@mixin box-shadow($left,
+$top,
+$radius,
+    $spread,
+$color) {
+    box-shadow: $left $top $radius $spread $color;
+    -webkit-box-shadow: $left $top $radius $spread $color;
+    -moz-box-shadow: $left $top $radius $spread $color;
+    
+    
+    
+}
+
+/*border radius*/
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+}
+
+// =============================================================================
+// box inner shadow
+// =============================================================================
+@mixin box-inner-shadow($left,
+$top,
+$blur,
+$color) {
+       -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+}
+
+// =============================================================================
+// animation
+// =============================================================================
+@mixin transition($duration:0.2s,
+$ease:ease-out) {
+    -webkit-transition: all $duration $ease;
+    -moz-transition: all $duration $ease;
+    -o-transition: all $duration $ease;
+    transition: all $duration $ease;
+}
+
+// =============================================================================
+// transform
+// =============================================================================
+// Browser Prefixes
+@mixin transform($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    transform: $transforms;
+}
+
+// Rotate
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+// Translate
+@mixin translate ($x,
+$y) {
+    @include transform(translate($x, $y));
+}
+
+// Skew
+@mixin skew ($x,
+$y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// Transform Origin
+@mixin transform-origin ($origin) {
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+
+// =============================================================================
+// iconfont
+// =============================================================================
+@mixin iconFont($position,
+$content,
+$color,
+$size,
+$margin,
+
+$gauche,
+$droite) {
+
+    &:#{$position} {
+        position: absolute;
+        display: inline-block;
+        font-family: 'iconDouane';
+        color: $color;
+        @if $content=='fleche-droite' {
+            content: "\e92b";
+        }
+        @else if $content=='loupe' {
+            content: "\e92e";
+        }
+        @else if $content=='linkedid' {
+            content: "\e908";
+        }
+        @else if $content=='flickr' {
+            content: "\e910";
+        }
+        @else if $content=='googleplus' {
+            content: "\e911";
+        }
+        @else if $content=='youtube' {
+            content: "\e912";
+        }
+        @else if $content=='instagram' {
+            content: "\e913";
+        }
+        @else if $content=='twitter' {
+            content: "\e914";
+        }
+        @else if $content=='terre' {
+            content: "\e907";
+        }
+        @else if $content=='alerte' {
+            content: "\e923";
+        }
+        @else if $content=='rond-check' {
+            content: "\e924";
+        }
+        @else if $content=='rond-exclamation-fond' {
+            content: "\e925";
+        }
+        @else if $content=='cadenas-ouvert' {
+            content: "\e926";
+        }
+        @else if $content=='cadenas-ferme' {
+            content: "\e91c";
+        }
+        @else if $content=='bulle-message' {
+            content: "\e927";
+        }
+        @else if $content=='cloche-exclamation-fond' {
+            content: "\e928";
+        }
+        @else if $content=='triangle-exclamation' {
+            content: "\e929";
+        }
+        @else if $content=='fleche-gauche' {
+            content: "\e92a";
+        }
+        @else if $content=='fleche-droite' {
+            content: "\e92b";
+        }
+        @else if $content=='fleche-bas' {
+            content: "\e916";
+        }
+        @else if $content=='fleche-haut' {
+            content: "\e917";
+        }
+        @else if $content=='croix' {
+            content: "\e92d";
+        }
+        @else if $content=='fleche-bas-rond' {
+            content: "\e922";
+        }
+        @else if $content=='contact' {
+            content: "\e91d";
+        }
+        @else if $content=='cloche-exclamation' {
+            content: "\e91e";
+        }
+        @else if $content=='lien' {
+            content: "\e91f";
+        }
+        @else if $content=='pdf' {
+            content: "\e920" !important;
+        }
+        @else if $content=='ods' {
+            content: "\e941" !important;
+        }
+        @else if $content=='ppt' {
+            content: "\e943" !important;
+        }
+        @else if $content=='pptx' {
+            content: "\e943" !important;
+        }
+        @else if $content=='svg' {
+            content: "\e944" !important;
+        }
+        @else if $content=='txt' {
+            content: "\e945" !important;
+        }
+        @else if $content=='xls' {
+            content: "\e946" !important;
+        }
+        @else if $content=='xlsx' {
+            content: "\e946" !important;
+        }
+        @else if $content=='xsd' {
+            content: "\e947" !important;
+        }
+        @else if $content=='zip' {
+            content: "\e948" !important;
+        }
+        @else if $content=='doc' {
+            content: "\e949" !important;
+        }
+        @else if $content=='docx' {
+            content: "\e949" !important;
+        }
+        @else if $content=='odt' {
+            content: "\e950" !important;
+        }
+        @else if $content=='csv' {
+            content: "\e94f" !important;
+        }
+        @else if $content=='rond-exclamation' {
+            content: "\e921";
+        }
+        @else if $content=='rond-plus' {
+            content: "\e91a";
+        }
+        @else if $content=='rond-moins' {
+            content: "\e91b";
+        }
+        @else if $content=='partage' {
+            content: "\e918";
+        }
+        @else if $content=='imprimer' {
+            content: "\e919";
+        }
+        @else if $content=='fleche-bas-rond' {
+            content: "\e915";
+        }
+        @else if $content=='video' {
+            content: "\e909";
+        }
+        @else if $content=='smartphone' {
+            content: "\e90a";
+        }
+        @else if $content=='email' {
+            content: "\e90b";
+        }
+        @else if $content=='telephone' {
+            content: "\e90c";
+        }
+        @else if $content=='sortie-secours' {
+            content: "\e90d";
+        }
+        @else if $content=='ajouter-groupe' {
+            content: "\e90e";
+        }
+        @else if $content=='document' {
+            content: "\e90f";
+        }
+        @else if $content=='fleche-complete-droite' {
+            content: "\e906";
+        }
+        @else if $content=='parametres' {
+            content: "\e900";
+        }
+        @else if $content=='carte-id' {
+            content: "\e901";
+        }
+        @else if $content=='deconnexion' {
+            content: "\e902";
+        }
+        @else if $content=='bulle-exclamation' {
+            content: "\e903";
+        }
+        @else if $content=='accueil' {
+            content: "\e904";
+        }
+        @else if $content=='groupe' {
+            content: "\e905";
+        }
+        @else if $content=='aucun' {
+            content: " ";
+        }
+
+
+
+        font-size: $size;
+
+        margin:$margin;
+        font-weight: normal;
+        right:$droite;
+        left:$gauche;
+
+    }
+
+
+
+
+
+}

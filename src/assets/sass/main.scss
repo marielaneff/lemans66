@@ -1,0 +1,647 @@
+@import "common/_bootstrap-custom";
+@import "lemans66/elements/colors";
+@import "lemans66/elements/mixins";
+
+
+
+body{
+
+}
+
+
+
+
+body{
+    font-family: 'Muli', sans-serif;
+    color:$gris3;
+
+    
+   
+
+font-size:16px;
+    
+    
+}
+
+
+
+
+
+
+
+/*titres */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+ font-family: 'Arvo', serif;
+    text-transform: uppercase;
+    
+}
+
+h1,.h1{
+   
+     @include responsive-font-size(50px);
+}
+
+h2,.h2{
+    
+        @include responsive-font-size(24px);
+}h3,.h3{
+       @include responsive-font-size(20.8px);
+}
+/*fin titre*/
+
+a{
+    color:$bleu2;
+    &:hover{
+        color:$bleu2;
+        text-decoration: none;
+    }
+}
+/*menu */
+
+
+header{
+    .btn{
+        font-size:1.5em;
+    }
+}
+/* fin menu*/
+
+
+
+
+/*btn*/
+.btn{
+        border-radius: 0;
+      color:white !important;
+   
+        @include responsive-font-size(12px);
+    text-transform: uppercase;
+     font-family: 'Arvo', serif;
+    line-height: 1.4;
+     margin-bottom:0.5em;
+    span{
+      
+    }
+    
+  
+    &.btnRose{
+        background-color:$rose1;
+        
+          &:hover{
+          background-color:darken($rose1,20%);
+    }
+    
+        
+    } 
+    &.btnRoseFonce{
+        background-color:$rose2;
+        &:hover{
+          background-color:lighten($rose2,10%);
+    }
+    }
+    &.btnBleu{
+        background-color:$bleu2;
+         &:hover{
+          background-color:lighten($bleu2,20%);
+    }
+    }
+      &.btnSable{
+        background-color:$gris1;
+           &:hover{
+          background-color:lighten($gris1,20%);
+    }
+    }
+    
+    &.btnTrans{
+        background-color:transparent;
+        color:$gris3 !important;
+    }
+    &.btnXl{
+        font-weight: bold;
+ 
+          @include responsive-font-size(16px);
+        line-height: 2.5;
+       
+    } 
+    &.btnSmall{
+      
+  
+          @include responsive-font-size(12px);
+        line-height: 2.5;
+        border:none;
+        background-color: transparent;
+        text-decoration: underline;
+        color:$rose1 !important;
+        padding:0;
+       
+    }
+}
+/*fin btn*/
+
+
+/*formulaire*/
+.nf-form-cont{
+    input,textarea{
+        border:none;
+        background-color:$gris2;
+        border-bottom:0.13em solid $bleu2;
+    
+          @include responsive-font-size(0.8em);
+        color:$bleu2;
+        padding-bottom:1.5em;
+        padding-left:0.19em;
+        padding-top:0.19em;
+        
+        &[type=button]{
+             padding:0.63em;
+        }
+    }
+}
+/*fin formulaire*/
+/*flat icon*/
+
+@include font-face('Flaticon', 'font/Flaticon');
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("font/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+       
+     @include responsive-font-size(18px);
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-telephone:before { content: "\f100"; }
+.flaticon-mail:before { content: "\f101"; }
+.flaticon-arrow:before { content: "\f102"; }
+.flaticon-arrow-up-inside-a-circular-button:before { content: "\f103"; }
+.flaticon-tick-inside-a-circle:before { content: "\f104"; }
+.flaticon-thin-add-button:before { content: "\f105"; }
+.flaticon-menu:before { content: "\f106"; }
+.flaticon-left-arrow:before { content: "\f107"; }
+.flaticon-add:before { content: "\f108"; }
+.flaticon-menu-1:before { content: "\f109"; }
+.flaticon-close:before { content: "\f10a"; }
+.flaticon-account:before { content: "\f10b"; }
+.flaticon-conversation:before { content: "\f10c"; }
+.flaticon-key:before { content: "\f10d"; }
+.flaticon-location-pin:before { content: "\f10e"; }
+.flaticon-hold:before { content: "\f10f"; }
+.flaticon-respect:before { content: "\f110"; }
+.flaticon-team:before { content: "\f111"; }
+.flaticon-education:before { content: "\f112"; }
+.flaticon-presentation:before { content: "\f113"; }
+
+
+
+
+#page{
+    overflow-x: hidden;
+}
+
+/*slider*/
+.contenuAvant{
+    width: 100%;
+    //margin-top:2.06em;
+    h2{
+        color:$bleu2;
+    }
+    
+    .contenu{
+       
+         @include responsive-font-size(22.08px);
+    }
+    
+}
+.diapo{
+
+     min-height: 45vh;
+      background-position:center;
+        background-repeat:no-repeat;
+        background-size: cover;
+    text-align: right;
+    .slideCont{
+   
+
+      float: right;
+         min-height:45vh;
+        background-color:$whiteOpa50;
+        padding:3rem;
+      
+        
+        
+  
+
+    }
+ 
+}
+
+/*fin silder*/
+
+
+/*contneu en avant*/
+.main{
+    .contenu{
+   
+        @include responsive-font-size(22.08px);
+      
+    }
+      padding-bottom:5.31em;
+    
+}
+/*fin contenu en avant*/
+
+/*objectifs*/
+.objectifs{
+    padding-bottom:5.31em;
+    
+    .row{
+        div{
+            &:nth-child(2){
+               margin:1.88em 0;
+            }
+            
+            img{
+                float: left;
+                margin-right:0.63em;
+            }
+        }
+    }
+}
+/*fin objectifs*/
+
+/*adhésion*/
+.adhesion{
+    background-color:$rose1;
+    color:white;
+    padding-top:1em;
+    padding-bottom:1em;
+  
+    h2{
+        margin-bottom:2.81rem;
+        
+    }
+}
+
+.ihc-bank-transfer-msg{
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+        color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+/*fin adhésion*/
+
+
+/*actualité et formation*/
+.contActu{
+    
+    color:white;
+    padding-top:2em;
+    padding-bottom:5em;
+    
+    h3{
+       
+        @include responsive-font-size(18px);
+    }
+    
+    li{
+        border-bottom:1px solid $whiteOpa20;
+        padding-bottom:0.63em;
+        a{ color:white;}
+        br + a{
+           
+            text-decoration: underline;
+            float: right;
+          
+            @include responsive-font-size(12px);
+        }
+        
+        span{
+            background-color:$bleu2Opa;
+            padding:0.13em;
+        }
+      
+    }
+    
+}
+
+.contForma{
+    color:$gris1;
+      padding-top:2em;
+    margin-top:5em;
+    
+    h2{
+      
+        @include responsive-font-size(24px);
+    }
+    h3{
+      
+        @include responsive-font-size(18px);
+    }
+    a{
+        color:$gris1; 
+    }
+    
+    span{
+   
+        @include responsive-font-size(15.04px);
+    }
+    li{
+        border-bottom:1px solid $gris2;
+        padding:0.63em 0;
+    }
+}
+/*fin actualités et formation*/
+
+
+/*footer*/
+footer{
+    margin-top:2em;
+    padding:1.5em 0;
+    background-color:$douane08dp;
+    color:$gris1;
+    line-height:0.8em;
+    h4{
+   
+        @include responsive-font-size(12.8px);
+    }
+    .row{
+        &:last-child{
+          
+            @include responsive-font-size(12px);
+            a{
+              color:$gris1;
+            }
+        }
+    }
+    
+    .nf-form-cont{
+         line-height:1.5em;
+        
+        .nf-form-fields-required{
+        
+            @include responsive-font-size(8px);
+        }
+    }
+}
+/*fin footer*/
+
+
+/*espace privé*/
+.ihc-register-2 .iump-form-line-register input[type=text]:hover, .ihc-register-2 .iump-form-line-register input[type=password]:hover, .ihc-register-2 .iump-form-line-register input[type=number]:hover, .ihc-register-2 .iump-form-line-register textarea:hover, .ihc-register-2 .iump-form-line-register select:hover, .ihc-register-2 .iump-form-line-register .select2-selection:hover, .ihc-register-2 .iump-form-line-register input[type=text]:focus, .ihc-register-2 .iump-form-line-register input[type=password]:focus, .ihc-register-2 .iump-form-line-register input[type=number]:focus, .ihc-register-2 .iump-form-line-register textarea:focus, .ihc-register-2 .iump-form-line-register select:focus, .ihc-register-2 .iump-form-line-register .select2-selection:focus
+{
+        border-color: $bleu3 !important;
+}
+.logged-in,
+.page-template-default{
+    .ihc-register-2 .iump-submit-form input{
+     
+        
+            background: none repeat scroll 0 0$rose1 !important;
+    border: 4px solid $rose1 !important;
+    border-width: 3px;
+    border-color: $rose1 !important;
+        
+        color:white;
+           
+        @include responsive-font-size(12px);
+    text-transform: uppercase;
+    font-family: 'Arvo', serif;
+    line-height: 1.4;
+        
+        &:hover{
+           @include  border-radius(0);  
+            background-color:$rose2;
+        }
+    }
+}
+
+.iump-subscription-page-top{
+    .iump-subscription-page-top-title{
+            font-family: 'Arvo', serif;
+    text-transform: uppercase;
+        border-color:$rose1;
+    }  
+} 
+.ihc_level_template_1{
+    .ihc-level-item-top{
+            border-color:$rose1;
+    }
+    .ihc-level-item{
+        width: 50%;
+        float: left;
+      
+    }
+    .ihc-level-item-title{
+          font-family: 'Arvo', serif;
+    text-transform: uppercase;
+    
+        
+    }
+    .ihc-level-item-link {
+          
+        @include responsive-font-size(12px);
+            font-weight: 400;
+     text-transform: uppercase;
+    border-radius: 0;
+ font-family: 'Arvo', serif;
+    background: none repeat scroll 0 0 $rose1;
+    border-color: $rose1 !important;
+
+}
+} 
+
+/*fin espace privé*/
+/*contenu*/ 
+
+.wp-block-column{
+         
+    @include responsive-font-size(12.8px);
+
+        }
+/*fin contenu*/
+/*bloc coisation*/
+    .ihc_level_template_1 .ihc-level-item {
+    width: 100%;
+    float: none;
+}
+    .iump-subscription-page-top .iump-subscription-page-top-title {
+
+    max-width: 100%;
+
+}
+.ihc-ap-menu{
+    display: block !important;
+}
+.ihc-mobile-bttn-wrapp{
+    display:none;
+}
+.ihc-register-2{
+    min-width: 280px;
+}
+
+.contenu{
+    .ihc-theme_1{
+        .member-name{
+            position: static;
+            text-align: right;
+            background-color:$gris1;
+            span{
+                display: none;
+            }
+        }
+    .member-img{
+        img{
+             display: none;
+        }
+       
+    } 
+} 
+}
+
+/*fin bloc cotisatin*/
+
+/*carte*/
+.acf-map {
+	width: 100%;
+	height: 200px;
+	border: #ccc solid 0px;
+	margin: 20px 0;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+   max-width: inherit !important;
+}
+/*fin carte*/
+
+
+/*liste formation*/
+.contFormaArchive{
+    border-bottom:1px solid $gris1;
+    
+    h4{
+       
+        @include responsive-font-size(12px);
+    }
+    
+    .blocInfo{
+        span{
+            font-weight: bold;
+        }
+    }
+}
+/*fi liste formations*/
+/*responsive*/
+@media(min-width:556px){
+    .contForma{
+ 
+    margin-top:0em;
+        color:white;
+        a{
+            color:white;
+        }
+}
+}
+
+@media (min-width: 768px) { 
+
+    
+    .iump-subscription-page-top .iump-subscription-page-top-title {
+
+    max-width: 70%;
+
+}
+    
+    
+    .ihc_level_template_1 .ihc-level-item {
+    width: 48%;
+        
+    float: left;
+          max-width: none !important;
+}
+    
+    
+}
+    @media (min-width: 992px) { 
+            .deco1, .deco2{
+ 
+    background-size: contain;
+   
+}
+        .deco2{
+                background-position: 0px -2.13em;
+        }
+    .mm-menu{
+        
+      
+          .mm-panels{
+       
+        .dropdown-menu{
+           
+            @include responsive-font-size(12px);
+        }
+        #menu-principal{
+            .navbar-nav  {
+                            @include responsive-font-size(12px);
+            } 
+        }   
+    }
+  
+    }
+
+    .btn{
+           &.btnXl{
+      
+                   @include responsive-font-size(18px);
+
+    }
+    }
+.contActu{
+    
+    
+    padding-top:3.13em;
+    padding-bottom:23.75em;
+    }
+    
+    .contForma{
+        padding-top:11.69em;
+        
+
+
+        color: $gris1;
+
+        a {
+            color: $gris1;
+      
+    }
+    }
+.diapo{
+
+    
+    .slideCont{
+   
+
+     
+        width:30%;
+        
+        
+  
+
+    }
+ 
+}
+}
+/*fin responsive*/
