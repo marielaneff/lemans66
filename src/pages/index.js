@@ -9,17 +9,25 @@ import SideFooter from '../components/SideFooter';
 import Produits from '../components/Produits';
 import ListePage from '../components/ListePage';
 
+import anime from 'animejs/lib/anime.es.js';
 
-
-import heroImage from '../assets/images/pic01.jpg';
+import heroImage from '../assets/images/car.svg';
 import pic2 from '../assets/images/pic02.jpg';
 import Gallery from '../components/Gallery';
 import ContactForm from '../components/ContactForm';
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import Zoom from 'react-reveal/Zoom';
 
 const path = require(`path`)
 const slash = require(`slash`)
+
+
+
+
+// Then in a component:
+
+
 
 const img_set_1 = [
   {
@@ -91,14 +99,19 @@ const img_set_3 = [
     full: true,
   },
 ];
+
+
 const IndexPage = (props) => (
   <Layout>
-    <div id="wrapper">
+    <div > <img src={heroImage} alt="" id="imgIntro" /></div>
+    
+    
+    <div id="wrapper" className="contSite">
       <section className="intro">
         <Header />
         <div className="content">
           <span className="image fill" data-position="center">
-            <img src={heroImage} alt="" />
+           
           </span>
         </div>
       </section>
@@ -109,32 +122,32 @@ const IndexPage = (props) => (
         </header>
     
 
-
+ 
         <div className="content">
-          <p>
-            <strong>Lorem ipsum dolor</strong> sit amet consectetur adipiscing
+          <Zoom> <p>
+            <strong>Lorem ipsum dolor</strong>plouf plour tramama sit amet consectetur adipiscing
             elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad
-            litora torquent per conubia nostra, per inceptos himenaeos. Etiam
+            plouf litora torquent per conubia nostra, per inceptos himenaeos. Etiam
             tristique libero eu nibh porttitor amet fermentum. Nullam venenatis
             erat id vehicula ultrices sed ultricies condimentum. Magna sed etiam
             consequat, et lorem adipiscing sed nulla. Volutpat nisl et tempus et
             dolor libero, feugiat magna tempus, sed et lorem adipiscing.
-          </p>
+          </p></Zoom>
           <span className="image main">
             <img src={pic2} alt="" />
           </span>
-    <div class="col-sm-6">
+    <div className="col-sm-6">
         <Img fluid={props.data.imageOne.childImageSharp.fluid} />
     <p>
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <a className="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     Link with href
   </a>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     Button with data-target
   </button>
 </p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
+<div className="collapse" id="collapseExample">
+  <div className="card card-body">
     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
   </div>
 </div>
@@ -270,13 +283,13 @@ const IndexPage = (props) => (
       </section>
 <section>
   
-    <div class="container">
+    <div className="container">
    
   <ListePage />
     </div>
     </section><section>
   
-    <div class="container">
+    <div className="container">
    
     <Produits />
     </div>
@@ -358,4 +371,55 @@ imageFour: file(relativePath: { eq: "three.png" }) {
     }
 }
 `
+
+
+
+
+
+
+if (typeof window !== `undefined`) {
+
+// Create a timeline with default parameters
+var tl = anime.timeline({
+  easing: 'easeInCubic',
+  duration: 2500
+});
+
+// Add children
+tl
+.add({
+  targets: '#imgIntro',
+  scaleX: [0, 4.5], // from 100 to 250
+    scaleY: [0, 4.5], // from 100 to 250
+     translateX: [-100, 100], // from 100 to 250
+      translateY: [-10, 100], // from 100 to 250
+    duration:2000,
+     complete: function(anim) {
+console.log('fini');
+  }
+})
+.add({
+  targets: '#imgIntro',
+   scaleX: [ 4.5, 100], // from 100 to 250
+    scaleY: [ 4.5, 100], // from 100 to 250
+      translateX: [100, -500], // from 100 to 250
+delay:2000,
+    duration:500
+
+})
+.add({
+   
+  targets: '.contSite',
+  translateX: [-2000, 0]
+  
+   
+});
+
+
+}
+
+
+
+
+
 

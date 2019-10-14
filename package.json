@@ -11,6 +11,7 @@
     "email": "anubhav.srivastava00@gmail.com"
   },
   "dependencies": {
+    "animejs": "^3.1.0",
     "cwebp": "^2.0.3",
     "gatsby": "^2.15.35",
     "gatsby-image": "^2.2.25",
@@ -26,7 +27,10 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-images": "^0.5.19",
+    "react-loadable": "^5.5.0",
+    "react-reveal": "^1.2.2",
     "react-scrollspy": "^3.4.0",
+    "scrollreveal": "^4.0.5",
     "smoothscroll-polyfill": "^0.4.4"
   },
   "scripts": {
