@@ -1,0 +1,12 @@
+        {
+  "prod":{
+    "user": "marie",
+    "host": "149.202.201.100",
+    "port": "22",
+    "files": "/public",
+    "path": "var/www/photos.cestquimaurice.com",
+
+  },
+  "dev":{},
+  "staging":{}
+}

@@ -22,6 +22,7 @@
     "gatsby-plugin-sharp": "^2.2.29",
     "gatsby-source-wordpress": "^3.1.41",
     "gatsby-transformer-sharp": "^2.2.21",
+    "node-ftp-deploy": "^1.0.2",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -36,7 +37,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "npm run clean && gatsby build",
-    "deploy": "npm run clean && gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "node deploy",
     "serve": "gatsby serve",
     "clean": "rimraf .cache public",
     "format": "prettier --write '**/*.js'",
@@ -44,6 +45,7 @@
   },
   "devDependencies": {
     "eslint": "^5.16.0",
+    "ftp-deploy": "^2.3.5",
     "gh-pages": "^2.0.1",
     "prettier": "^1.17.0",
     "rimraf": "^2.6.3"
